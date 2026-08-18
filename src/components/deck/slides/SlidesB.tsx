@@ -2,8 +2,8 @@ import { SlideLayout, Kicker, Rise, Mark } from "../SlideLayout";
 import { Counter } from "../Counter";
 import mesh from "@/assets/ai-mesh.jpg";
 import {
-  Bot,
-  BrainCircuit,
+  BotMessageSquare,
+  Cpu,
   Workflow,
   Code2,
   PenTool,
@@ -22,12 +22,12 @@ const TOTAL = 10;
 /* ------------------------------------------- 06 — AI on top of the web */
 const aiPoints = [
   {
-    icon: Bot,
+    icon: BotMessageSquare,
     title: "Agents that close the loop",
     body: "Qualify, quote, book and follow up — on the site, on WhatsApp, at 3am.",
   },
   {
-    icon: BrainCircuit,
+    icon: Cpu,
     title: "LLMs trained on your business",
     body: "Your catalogue, pricing logic and past deals answering in your tone, not a generic one.",
   },
@@ -60,9 +60,9 @@ export function Slide06() {
         }}
       />
 
-      <div className="absolute left-[96px] right-[96px] top-[64px] flex items-center justify-between">
-        <div className="flex items-center gap-4">
-          <Mark tone="dark" size={26} />
+      <div className="absolute left-[96px] right-[96px] top-[50px] flex items-center justify-between">
+        <div className="flex items-center gap-5">
+          <Mark tone="dark" size={46} />
           <span className="slide-kicker" style={{ opacity: 0.55 }}>
             Web + AI
           </span>
@@ -71,8 +71,15 @@ export function Slide06() {
           06 / 10
         </span>
       </div>
+      <div
+        className="wa-line absolute left-[96px] right-[96px] top-[112px] h-px"
+        style={{
+          background: "oklch(1 0 0 / 0.16)",
+          ["--d" as string]: "120ms",
+        }}
+      />
 
-      <div className="absolute inset-0 flex flex-col justify-between px-[96px] pb-[96px] pt-[150px]">
+      <div className="absolute inset-0 flex flex-col justify-between px-[96px] pb-[96px] pt-[152px]">
         <div className="max-w-[1180px]">
           <Rise delay={140}>
             <h2 className="slide-title">
@@ -84,19 +91,32 @@ export function Slide06() {
           </Rise>
         </div>
 
-        <div className="grid grid-cols-3 gap-[36px]">
+        <div className="grid grid-cols-3 gap-[32px]">
           {aiPoints.map((p, i) => (
             <Rise key={p.title} delay={380 + i * 140}>
               <div
-                className="wa-card h-[300px] rounded-[22px] border p-[38px] backdrop-blur-sm"
+                className="wa-card flex min-h-[350px] flex-col justify-between rounded-[22px] border p-[34px] backdrop-blur-md"
                 style={{
-                  borderColor: "oklch(1 0 0 / 0.16)",
-                  background: "oklch(0.14 0 0 / 0.72)",
+                  borderColor: "oklch(1 0 0 / 0.18)",
+                  background: "oklch(0.14 0 0 / 0.78)",
                 }}
               >
-                <p.icon size={34} strokeWidth={1.4} />
-                <p className="slide-subtitle mt-[26px]">{p.title}</p>
-                <p className="slide-body mt-[16px]" style={{ color: "oklch(0.72 0 0)" }}>
+                <div>
+                  <div
+                    className="flex h-[54px] w-[54px] items-center justify-center rounded-xl"
+                    style={{
+                      background: "oklch(1 0 0 / 0.08)",
+                      border: "1px solid oklch(1 0 0 / 0.14)",
+                    }}
+                  >
+                    <p.icon size={28} strokeWidth={1.5} className="text-white" />
+                  </div>
+                  <h3 className="slide-subtitle mt-[22px] leading-[1.2]">{p.title}</h3>
+                </div>
+                <p
+                  className="slide-body mt-[16px] text-[22px] leading-[1.45]"
+                  style={{ color: "oklch(0.74 0 0)" }}
+                >
                   {p.body}
                 </p>
               </div>
@@ -121,8 +141,8 @@ const services = [
   { icon: PenTool, t: "Brand & UI/UX", s: "Identity, design systems, packaging" },
   { icon: Search, t: "SEO", s: "Technical, on-page, authority" },
   { icon: Target, t: "Performance Marketing", s: "Meta, Google, LinkedIn — AI-optimised" },
-  { icon: Bot, t: "Agentic Automation", s: "Sales, support and ops agents" },
-  { icon: BrainCircuit, t: "LLM Solutions", s: "Private assistants on your data" },
+  { icon: BotMessageSquare, t: "Agentic Automation", s: "Sales, support and ops agents" },
+  { icon: Cpu, t: "LLM Solutions", s: "Private assistants on your data" },
   { icon: ShoppingBag, t: "Content & Social", s: "Story, creative, always-on" },
   { icon: LineChart, t: "Analytics & CRO", s: "Attribution, testing, dashboards" },
 ];
@@ -188,8 +208,8 @@ export function Slide08() {
     {
       node: (
         <>
-          <span>$</span>
-          <Counter to={250} suffix="M+" delay={700} />
+          <span>₹</span>
+          <Counter to={30} suffix=" CR+" delay={700} />
         </>
       ),
       l: "revenue generated through ads & strategy",

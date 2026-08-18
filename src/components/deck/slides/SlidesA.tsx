@@ -36,7 +36,7 @@ export function Slide01() {
         <div className="flex items-start justify-between">
           <Rise delay={80}>
             <div className="wa-float">
-              <Mark tone="dark" size={168} />
+              <Mark tone="dark" size={180} />
             </div>
           </Rise>
           <Rise delay={200}>
@@ -46,38 +46,13 @@ export function Slide01() {
           </Rise>
         </div>
 
-        <div className="max-w-[1420px]">
+        <div className="my-auto max-w-[1440px] pb-[32px]">
           <Rise delay={320}>
-            <h1 className="slide-display">
-              The internet stopped
-              <br />
-              being a brochure.
-              <br />
+            <h1 className="flex flex-col gap-[32px] text-[114px] font-semibold leading-[0.96] tracking-[-0.055em]">
+              <span>The internet stopped</span>
+              <span>being a brochure.</span>
               <span style={{ color: "oklch(0.58 0 0)" }}>Most businesses still print one.</span>
             </h1>
-          </Rise>
-          <div
-            className="wa-line mt-[52px] h-px w-full"
-            style={{
-              background: "oklch(1 0 0 / 0.18)",
-              ["--d" as string]: "700ms",
-            }}
-          />
-          <Rise delay={820}>
-            <div className="mt-[36px] flex items-end justify-between">
-              <p className="slide-body-lg max-w-[820px]" style={{ color: "oklch(0.75 0 0)" }}>
-                Seven minutes on what a website plus AI actually does to a business — the revenue it
-                opens, and the cost it removes.
-              </p>
-              <div className="text-right">
-                <p className="slide-body" style={{ color: "oklch(0.98 0 0)" }}>
-                  Supraja Singireddy
-                </p>
-                <p className="slide-caption" style={{ color: "oklch(0.6 0 0)" }}>
-                  CEO, Web Anatomy
-                </p>
-              </div>
-            </div>
           </Rise>
         </div>
       </div>

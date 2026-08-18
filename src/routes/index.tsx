@@ -11,7 +11,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "A seven-minute Web Anatomy presentation on the revenue a modern website plus AI opens for a business, and the cost it removes.",
+          "Web Anatomy presentation on the revenue a modern website plus AI opens for a business, and the cost it removes.",
       },
       { property: "og:title", content: "Web Anatomy — Web & AI Expo Deck" },
       {

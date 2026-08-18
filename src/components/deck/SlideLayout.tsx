@@ -4,14 +4,28 @@ import logoBlack from "@/assets/logo-black.png.asset.json";
 
 export type Tone = "light" | "dark";
 
-export function Mark({ tone, size = 34 }: { tone: Tone; size?: number }) {
+export function Mark({
+  tone,
+  size = 34,
+  className = "",
+}: {
+  tone: Tone;
+  size?: number;
+  className?: string;
+}) {
+  const src =
+    tone === "dark" ? (logoWhite?.url ?? "/logo-white.png") : (logoBlack?.url ?? "/logo-black.png");
+
   return (
     <img
-      src={tone === "dark" ? logoWhite.url : logoBlack.url}
+      src={src}
       alt="Web Anatomy"
       width={size}
       height={size}
+      className={`inline-block shrink-0 object-contain select-none ${className}`}
       style={{ width: size, height: size }}
+      loading="eager"
+      decoding="async"
     />
   );
 }
@@ -42,11 +56,11 @@ export function SlideLayout({
     >
       {/* chrome: top rule + label */}
       <div
-        className="absolute left-[96px] right-[96px] top-[64px] flex items-center justify-between"
-        style={{ opacity: 0.85 }}
+        className="absolute left-[96px] right-[96px] top-[50px] flex items-center justify-between"
+        style={{ opacity: 0.9 }}
       >
-        <div className="flex items-center gap-4">
-          <Mark tone={tone} size={26} />
+        <div className="flex items-center gap-5">
+          <Mark tone={tone} size={46} />
           <span className="slide-kicker" style={{ opacity: dark ? 0.55 : 0.45 }}>
             {label}
           </span>
@@ -56,7 +70,7 @@ export function SlideLayout({
         </span>
       </div>
       <div
-        className="wa-line absolute left-[96px] right-[96px] top-[104px] h-px"
+        className="wa-line absolute left-[96px] right-[96px] top-[112px] h-px"
         style={{
           background: dark ? "oklch(1 0 0 / 0.16)" : "oklch(0 0 0 / 0.12)",
           ["--d" as string]: "120ms",
@@ -65,7 +79,7 @@ export function SlideLayout({
 
       <div
         className="absolute inset-0"
-        style={padded ? { padding: "150px 96px 96px" } : { padding: 0 }}
+        style={padded ? { padding: "152px 96px 96px" } : { padding: 0 }}
       >
         {children}
       </div>
